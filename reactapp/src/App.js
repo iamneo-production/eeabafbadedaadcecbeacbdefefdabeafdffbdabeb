@@ -1,25 +1,17 @@
-import logo from './logo.svg';
+import { filterOdd, filterEven, generateRandomList } from './functions/filterOddEven';
 import './App.css';
-
 function App() {
+  const randomList = generateRandomList();
+  const oddList = filterOdd(...randomList);
+  const evenList = filterEven(...randomList);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1><u>FILTER ODD EVEN</u></h1>
+      <h2 id="d1">Random List: {randomList.join(', ')}</h2>
+      <h2 id="d2">Odd List: {oddList.join(', ')}</h2>
+      <h2 id="d3">Even List: {evenList.join(', ')}</h2>
     </div>
   );
 }
-
 export default App;
